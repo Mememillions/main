@@ -1,0 +1,89 @@
+.button {
+  display: inline-block;
+  font-family: $body-font;
+  font-weight: 600; // semi-bold
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  border-color: var(--color-primary);
+  
+  cursor: pointer;
+  text-align: center;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  outline: none;
+
+  &--primary {
+    background-color: #ff4081;
+    color: #fff;
+
+    &:hover {
+      background-color: #ff6fa3; // slightly lighter pink
+      box-shadow:
+        0 0 8px #ff4081,
+        0 0 15px #ff4081,
+        0 0 25px #ff4081,
+        0 0 40px #ff4081,
+        0 0 60px #ff4081; // neon glow
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff; // crisp glowing text
+    }
+  }
+
+  &--secondary {
+    background-color: #f0f0f0;
+    color: #0a0a0a;
+
+    &:hover {
+      background-color: #ffffff; // light hover
+      box-shadow:
+        0 0 6px #aaa,
+        0 0 12px #aaa,
+        0 0 18px #aaa; // subtle glow
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid #ff4081;
+    color: #ff4081;
+
+    &:hover {
+      background-color: #ff4081;
+      color: #fff;
+      box-shadow:
+        0 0 8px #ff4081,
+        0 0 15px #ff4081,
+        0 0 25px #ff4081,
+        0 0 40px #ff4081,
+        0 0 60px #ff4081; // same neon glow as primary
+    }
+  }
+
+&.glow:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-dark-1);
+  border-radius: 999px;
+  border-color: var(--color-primary);
+  box-shadow: 
+    0 0 20px var(--color-primary),
+    0 0 40px var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+&.glow:active {
+  transform: translateY(0);
+}
+
+&.glow[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+}

@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    {% for item in site.data.settings.social %}
+      {% assign key = item[0] %}
+      {% assign url = item[1] %}
+
+      {% if url contains "mailto:" %}
+        <a href="#"
+           class="footer-email site-footer-link"
+           data-email="{{ url | remove: 'mailto:' }}"
+           aria-label="{{ key }}">
+          <img
+            src="{{ '/assets/footer/' | append: key | append: '.svg' | relative_url }}"
+            alt="{{ key }}"
+            class="site-footer-icon">
+        </a>
+      {% else %}
+        <a href="{{ url }}"
+           class="site-footer-link"
+           aria-label="{{ key }}"
+           target="_blank"
+           rel="noopener">
+          <img
+            src="{{ '/assets/footer/' | append: key | append: '.svg' | relative_url }}"
+            alt="{{ key }}"
+            class="site-footer-icon">
+        </a>
+      {% endif %}
+    {% endfor %}
+
+    <p class="site-footer-text">
+      © 2026 {{ site.title }}
+    </p>
+  </div>
+</footer>

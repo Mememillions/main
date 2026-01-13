@@ -1,0 +1,40 @@
+<head>
+   {% include csp.html %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="ULsSS9SW0O2t0d76FM20iITO83i9vbTNtTVclZiV7mM">
+
+  <!-- SEO -->
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+  <!-- Local SEO -->
+  {% include biz-schema.html %}
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="{% if page.layout == 'page' %}website{% else %}article{% endif %}">
+  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/img/share-image.jpg' | relative_url | absolute_url }}{% endif %}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <!-- Main CSS -->
+  <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- External JS only (CSP-safe) -->
+  <script src="/assets/js/fonts-loader.js" defer></script>
+  <script src="/assets/js/ga-lazy.js" defer></script>
+  <script src="/assets/js/contact-form.js" defer></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+</head>

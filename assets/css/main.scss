@@ -1,0 +1,38 @@
+---
+---
+@import "base/reset";
+@import "base/variables";
+
+@import "base/typography";
+@import "base/layout";
+
+@import "utilities/helpers";
+
+@import "components/navbar";
+@import "components/footer";
+@import "components/buttons";
+@import "components/forms";
+@import "components/whatsapp";
+@import "components/contact";
+
+@import "page/services";
+@import "page/index";
+
+@import "sections/hero";
+
+/* Debug */
+html {
+  outline: 5px solid red !important;
+}
+
+body::before {
+  content: "main.scss loaded";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: red;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+}
